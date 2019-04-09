@@ -1,0 +1,1 @@
+module.exports = {redis_sample_key: 'redis_sample_key'}

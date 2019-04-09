@@ -1,0 +1,23 @@
+{
+  "name": "study-rxjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node .",
+    "start:redis:pubsub": "concurrently \"node src/redis.pub.sub.test/redis-data-publish.js\" \"node src/redis.pub.sub.test/redis-obserbable.js\"",
+    "start:redis:rpushlpop": "concurrently \"node src/redis.rpush.lpop.test/redis-data-rpush.js\" \"node src/redis.rpush.lpop.test/redis-lpop.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^1.14.0",
+    "redis": "^2.8.0",
+    "rxjs": "^6.4.0"
+  },
+  "devDependencies": {
+    "@types/redis": "^2.8.12",
+    "concurrently": "^4.1.0"
+  }
+}

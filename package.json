@@ -5,8 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node .",
-    "start:redis:pubsub": "concurrently \"node src/redis.pub.sub.test/redis-data-publish.js\" \"node src/redis.pub.sub.test/redis-obserbable.js\"",
-    "start:redis:rpushlpop": "concurrently \"node src/redis.rpush.lpop.test/redis-data-rpush.js\" \"node src/redis.rpush.lpop.test/redis-lpop.js\""
+    "start:redis:pubsub": "concurrently \"pm2 start src/redis.pub.sub.test/redis-data-publish.js\" \"pm2 start src/redis.pub.sub.test/redis-obserbable.js\"",
+    "start:redis:rpushlpop": "concurrently \"pm2 start src/redis.rpush.lpop.test/redis-data-rpush.js --name \"Oredis-data-rpush\"\" \"pm2 start src/redis.rpush.lpop.test/redis-lpop.js --name \"Oredis-lpop\" \"",
+    "start:redis:subjectrpushlpop": "concurrently \"pm2 start src/redis.subject.rpush.lpop.test/redis-data-rpush.js\" \"pm2 start src/redis.subject.rpush.lpop.test/redis-lpop.js\"",
+    "monit": "pm2 monit"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +21,7 @@
   "devDependencies": {
     "@types/redis": "^2.8.12",
     "concurrently": "^4.1.0",
+    "pm2": "^3.5.0",
     "redis-server": "^1.2.2"
   }
 }

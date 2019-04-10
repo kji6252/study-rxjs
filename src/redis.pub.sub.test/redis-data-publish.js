@@ -1,4 +1,5 @@
 (async () => {
+    const redisServer = require('../share/redis-server-stator')
     const redisClient = require('redis').createClient()
     const sleep = require('../util/sleep')
     const redisKey = require('../share/redis-key')

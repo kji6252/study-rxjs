@@ -5,8 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node .",
-    "start:redis:pubsub": "concurrently \"pm2 start src/redis.pub.sub.test/redis-data-publish.js\" \"pm2 start src/redis.pub.sub.test/redis-obserbable.js\"",
-    "start:redis:rpushlpop": "concurrently \"pm2 start src/redis.rpush.lpop.test/redis-data-rpush.js --name \"Oredis-data-rpush\"\" \"pm2 start src/redis.rpush.lpop.test/redis-lpop.js --name \"Oredis-lpop\" \"",
+    "start:redis:pubsub": "concurrently \"pm2 start src/redis.observable.pub.sub.test/redis-data-publish.js\" \"pm2 start src/redis.observable.pub.sub.test/redis-obserbable.js\"",
+    "stop:redis:pubsub": "concurrently \"pm2 stop src/redis.observable.pub.sub.test/redis-data-publish.js\" \"pm2 stop src/redis.observable.pub.sub.test/redis-obserbable.js\"",
+    "start:redis:rpushlpop": "concurrently \"pm2 start src/redis.observable.rpush.lpop.test/redis-data-rpush.js --name \"Oredis-data-rpush\"\" \"pm2 start src/redis.observable.rpush.lpop.test/redis-lpop.js --name \"Oredis-lpop\" \"",
+    "start:redis:rpushlpop2": "concurrently \"pm2 start src/redis.observable2.rpush.lpop.test/redis-data-rpush.js --name \"Oredis2-data-rpush\"\" \"pm2 start src/redis.observable2.rpush.lpop.test/redis-lpop.js --name \"Oredis2-lpop\" \"",
     "start:redis:subjectrpushlpop": "concurrently \"pm2 start src/redis.subject.rpush.lpop.test/redis-data-rpush.js\" \"pm2 start src/redis.subject.rpush.lpop.test/redis-lpop.js\"",
     "monit": "pm2 monit"
   },

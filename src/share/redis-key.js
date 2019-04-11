@@ -1,1 +1,1 @@
-module.exports = {redis_sample_key: 'redis_sample_key'}
+module.exports = Object.freeze({redis_sample_key: 'redis_sample_key'})
